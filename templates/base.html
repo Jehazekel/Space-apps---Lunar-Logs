@@ -9,18 +9,7 @@
  crossorigin="anonymous">
 </script>
 <body>
-	<header>
-		<div>
-			<h1>The |UNIT|</h1>
-		</div>
-		<nav class="header-tabs">
-			<ul>
-				{% block navbar %} {% endblock %}
-                <li><a href="/logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2a9.985 9.985 0 0 1 8 4h-2.71a8 8 0 1 0 .001 12h2.71A9.985 9.985 0 0 1 12 22zm7-6v-3h-8v-2h8V8l5 4-5 4z" fill="rgba(255,186,2,1)"/></svg></a></li>
-			</ul>
-			<div class="moon"></div>
-
-      {% with messages = get_flashed_messages() %}
+	{% with messages = get_flashed_messages() %}
           {% if messages %}
           
             <div id="messages"class="nav-wrapper"style="padding: 10px">
@@ -33,6 +22,18 @@
           
           {% endif %}
       {% endwith %}
+	<header>
+		<div>
+			<h1>The |UNIT|</h1>
+		</div>
+		<nav class="header-tabs">
+			<ul>
+				{% block navbar %} {% endblock %}
+                <li><a href="/logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2a9.985 9.985 0 0 1 8 4h-2.71a8 8 0 1 0 .001 12h2.71A9.985 9.985 0 0 1 12 22zm7-6v-3h-8v-2h8V8l5 4-5 4z" fill="rgba(255,186,2,1)"/></svg></a></li>
+			</ul>
+			<div class="moon"></div>
+
+      
 		</nav>
     
 	</header>
