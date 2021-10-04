@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Add Log Entry{% endblock %} 
+
+{% block navbar %}
+    <li><a href="/">VIEW LOGS</a></li>
+    <li><a class="active">LOG ENTRY</a></li>
+    <li><a href="/about">ABOUT US</a></li>
+{% endblock %} 
+
+{% block main %}
+    <div class="logEntry">
+        <button class="btn-logEntry" type="button" onclick="logEntry()">
+            <img class="icon-logEntry" src="assets/icons/weather_moonrise_icon_157357.svg" alt=""> <span>log entry</span></button>
+    </div>
+    <div class="card-dark">
+        <form class="log-entry-form" action='/log-entry' enctype="multipart/form-data" method="POST" autocomplete="on">
+            <!-- write code to submit -->
+
+            <div class="log-text-input">
+                <label>
+                    Author<small>(HIDE THIS FIELD)</small>
+                </label>
+                <textarea name="author" id="log-text-input1" cols="30" rows="1" value="{{username}}" placeholder="{{username}}" readOnly required></textarea>
+            </div>
+
+            <div class="log-text-input">
+                <label>
+                    Entry Topic <small>(This will be visible to entire network)</small>
+                </label>
+                <textarea name="topic" id="log-text-input" cols="30" rows="1" placeholder="✍️ Enter topic here..." required></textarea>
+            </div>
+
+            <div class="log-text-input">
+                <label>
+                    Sample Type <small>(This will be visible to entire network)</small>
+                </label>
+                <textarea name="sample_type" id="log-text-input" cols="30" rows="1" placeholder="✍️ Enter sample type  here..." ></textarea>
+            </div>
+
+            <div class="log-text-input">
+                <label>
+                    Hardware Used <small>(This will be visible to entire network)</small>
+                </label>
+                <textarea name="hardware_used" id="log-text-input" cols="30" rows="1" placeholder="✍️ Enter hardwares used here..." ></textarea>
+            </div>
+
+            <div class="log-text-input">
+                <label>
+                    Text Entry <small>(This will be visible to entire network)</small>
+                </label>
+                <textarea name="text_entry" id="log-text-input" cols="30" rows="2" placeholder="✍️ Enter your log's description  here..." required></textarea>
+            </div>
+            
+
+            <div>
+                <label for="img-input">
+                    <span>Upload Additional Media <small>(Supported: images, video, audio)</small></span> 
+          
+                </label>
+                
+                <div class="log-img-input" >
+                    <img class="cloud-upload" src="assets/icons/cloud-computing.svg" alt="">
+                    <input type="file" name="file" id="img-input">
+                </div>
+            </div>
+            
+            <input class="btn-submit-log" type="submit" value="Post Log">
+        </form>
+    </div>
+{% endblock %}

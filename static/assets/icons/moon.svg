@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94.595" height="91.461" viewBox="0 0 94.595 91.461">
+  <g id="Component_4_1" data-name="Component 4 – 1" transform="translate(3.002 1.738)">
+    <g id="Icon_feather-moon" data-name="Icon feather-moon" transform="translate(0 14.115)">
+      <path id="Icon_feather-moon-2" data-name="Icon feather-moon" d="M77.163,44.073A36.38,36.38,0,1,1,37.59,4.5,28.3,28.3,0,0,0,77.163,44.073Z" transform="translate(-4.557 -4.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    </g>
+    <path id="Icon_feather-star" data-name="Icon feather-star" d="M18,3l4.635,9.39L33,13.9l-7.5,7.3,1.77,10.32L18,26.655,8.73,31.53,10.5,21.21,3,13.9,13.365,12.39Z" transform="matrix(0.985, -0.174, 0.174, 0.985, 51.881, 2.776)" fill="none" stroke="#ffba02" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" opacity="0"/>
+  </g>
+</svg>

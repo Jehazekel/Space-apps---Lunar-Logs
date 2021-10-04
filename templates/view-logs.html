@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+
+{% block title %}View Logs{% endblock %} 
+
+{% block navbar %}
+    <li><a class="active">VIEW LOGS</a></li>
+    <li><a href="/log-entry">LOG ENTRY</a></li>
+    <li><a href="/about">ABOUT US</a></li>
+{% endblock %} 
+
+
+{% block main %}
+    <div class="lunarLogs">
+        <button class="btn-logEntry" type="button" >
+            <img class="icon-logEntry" src="assets/icons/weather_moonrise_icon_157357.svg" alt=""><span>lunar logs</span>
+        </button>
+        <div class="lunarLog-dropdown">
+            <select name="sortBY" id="sortBY" class="sortBy">
+                <option value="sort-by" selected disabled>Sort By</option>
+                <option value="time">Time</option>
+                <option value="entryTopic">Entry Topic</option>
+                <option value="author">Author</option>
+            </select>
+        </div>
+    </div>
+
+  {%   for log in logs  %}
+    <div class="log-container">
+        <div><img class="post-avatar " src="assets/icons/client.jpg" alt="client image"></div>
+        <div class="log-details">
+            <div class="author">{{log.author}}</div>
+            <div class="date-time">
+                <div class="date">{{log.time.split()[0]}}</div>
+                <div class="time">{{log.time.split()[1]}}</div>
+            </div>
+            <div class="log-textSection">
+                <div class="log-text">{{log.text_entry}}</div>
+
+                <div class="btn-moreInfo">
+                    <a href='/logs/query?log={{log.id}}'>
+                    
+                </div>
+                {% if log.files != [] %}
+                {%   for file in log.files  %}
+                    {% if file.file == 'image' %}
+                <div class="display-image">
+                  <img class="viewImage" src="{{file.filename}}" alt="image">
+                </div>
+                    
+
+                    {% elif file.file == 'audio' %}
+                                <div class="display-audio">
+                            <audio controls>
+                  <source src="{{file.filename}}" type="audio/ogg">
+                Your browser does not support the audio element.
+                </audio>
+           </div>
+                    
+
+                    {% elif file.file == 'video' %}
+                <div class="display-video">
+             <video width="320"  controls>
+               <source src="{{file.filename}}" type="video/mp4">
+             </video>
+           </div>
+                    {% endif %}
+
+                {%    endfor    %}
+                {% endif %}
+                
+            </div><button class="btn-TextExpand">
+                        <img class="btn-triangle" src="/assets/icons/down-filled-triangular-arrow.svg" alt="read more">
+                    </button>
+        </div>
+    </div>
+    {%    endfor    %}
+{% endblock %}
+
+
+{% block js%}
+  socket.on('new_log', (msg)=>{
+      //add new log
+      //document.getElementById('message').innerHTML += msg; 
+      console.log(msg)
+      window.location.reload(true);
+    }); 
+
+
+
+{% endblock %}

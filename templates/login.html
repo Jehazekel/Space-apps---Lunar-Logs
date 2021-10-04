@@ -1,0 +1,34 @@
+{% extends "form-layout.html" %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+
+{% block title %}Log In{% endblock %}
+
+{{ super() }}
+
+
+{% block main %} 
+<div class="login-form">
+        <h1>Log In</h1>
+         <div class="form-container">
+            <form action="/login" method="POST">
+            
+                <div><label for="username">Username</label><input type="text" name="username" autocomplete required></div>
+                <div><label for="password">Password</label><input type="password" name="password" required></div> 
+                
+                <div>
+                    <button type="submit"> Submit </button>
+                    Don't have an account? <em><a style="color: #FFBA02" href="/signup">Sign up</a></em>
+                </div>
+            </form>
+        </div>
+        <img src="{{ url_for('static', filename='/assets/images/rock-1.png') }}" class="rock1" alt="">
+        <img src="{{ url_for('static', filename='/assets/images/rock.png') }}" class="rock2" alt="">
+        <img src="{{ url_for('static', filename='/assets/images/rock2.png') }}" class="rock3" alt="">
+</div>
+{% endblock %}
+
+{{ url_for('static', filename='/assets/images/rock-1.png') }}

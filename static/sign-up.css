@@ -1,0 +1,45 @@
+@import url("assets/fonts/stylesheet.css");
+
+*{
+    box-sizing: border-box;
+    font-family: "Nasalization Rg";
+    
+}
+
+:root{
+    --purple-900: #110831;
+    --purple-600: #1D1145;
+    --purple-300: #cac5dc;
+    --grey-300: #575266;
+    --secondary: #FFBA02;
+    --secondary-hover: #dda50b;
+}
+
+body{
+  background-color: var(--purple-900);
+  color: var(--grey-300);
+}
+
+.form-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.form-container > form{
+  background: rgba( 255, 255, 255, 0.6 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: #fff;
+}
+
+.form-container form input{
+  background-color: var(--purple-300);
+}

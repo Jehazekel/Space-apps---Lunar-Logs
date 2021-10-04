@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form class="col s12" method="POST" action="/add_user">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="username" name="username" type="text" class="validate">
+                      <label for="username">Username</label>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" name="email" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="password" name="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                      <input id="confirm_password" name="confirm_password" type="password" class="validate">
+                      <label for="confirm_password"> Confirm Password</label>
+                    </div>
+
+                    <button type="submit"> Submit </button>
+  </form>
+</body>
+</html>
