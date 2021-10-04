@@ -1,1 +1,1 @@
-web: gunicorn -w 4  main:socketio --preload
+web: gunicorn -w 4  main:app --preload
