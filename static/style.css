@@ -348,8 +348,10 @@ audio{
 }
 
 
-.messages{
+#messages{
   position: absolute;
-  background-color: var(--postion);
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--purple-900);
   width: 200px;
 }
