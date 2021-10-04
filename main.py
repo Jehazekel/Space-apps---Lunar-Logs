@@ -54,7 +54,7 @@ login_manager.REMEMBER_COOKIE_REFRESH_EACH_REQUEST= True
 def create_app(UPLOAD_FOLDER):
   app = Flask(__name__, static_url_path='')
   #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-  DBURI = os.environ.get("DATABASE_URL")
+  DBURI = os.environ.get("DBURI")
   SQLITEDB = os.environ.get("SQLITEDB", default="true")
   app.config['ENV'] = os.environ.get("ENV")
   app.config['SQLALCHEMY_DATABASE_URI'] = DBURI
